@@ -9,4 +9,8 @@
  */
 
 function typeOfParam(param) {
+	if(typeof param =="object" && param == null){
+		return "null";
+	}
+	return typeof param;
 }
