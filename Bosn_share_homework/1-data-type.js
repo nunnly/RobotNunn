@@ -12,6 +12,8 @@
 function typeOfParam(param) {
 	if(typeof param =="object" && param == null){
 		return "null";
+	}else(typeof param =="function"){
+		return param.constructor;
 	}
 	return typeof param;
 }
