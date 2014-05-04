@@ -12,8 +12,13 @@
 function typeOfParam(param) {
 	if(typeof param =="object" && param == null){
 		return "null";
-	}else(typeof param =="function"){
-		return param.constructor;
+	}else if(typeof param == "object" && param.constructor.name !== "Object"){
+		return param.constructor.name;
 	}
 	return typeof param;
 }
+function AA(){
+
+}
+var aa = new AA();
+typeOfParam(aa);
