@@ -10,7 +10,7 @@
  */
 
 function typeOfParam(param) {
-	if(typeof param =="object" && param == null){
+	if(param === null){
 		return "null";
 	}else if(typeof param == "object" && param.constructor.name !== "Object"){
 		return param.constructor.name;
