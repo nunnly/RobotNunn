@@ -9,17 +9,16 @@
  * @return  {string} 如果变量名存在，返回true，不存在，返回false
  *
  */
-//var a=123;
+
 function valExists(valName) {
 	try{
-		return !!eval(valName)// && eval(valName) == undefined;
+		eval(valName)
+		return true;		
 	}catch(e){
-		console.log(e);
+		return false;
 	}
 }
-<<<<<<< HEAD
-//valExists("a");
-=======
+
 
 
 /**
@@ -36,7 +35,7 @@ function valExists(valName) {
  *
  */
 
-function valUndefined(valName) {
+// function valUndefined(valName) {
 
-}
->>>>>>> 6b9675a3f1febea8fc9c8427263d43fb4bf213fe
+// }
+
