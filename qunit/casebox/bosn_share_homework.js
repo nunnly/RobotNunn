@@ -17,5 +17,6 @@ test("bosn share homework 1, data type", function() {
         equal(typeOfParam(undefined), 'undefined', 'undefined check');
         var obj = new T__1();
         equal(typeOfParam(obj), 'T__1', 'customized class check');
+        equal(typeOfParam(T__1), 'function', 'function check');
     }
 });
