@@ -1,6 +1,6 @@
 module('bosn_share_homework');
 
-test("homework 1, data type", function() {
+test("bosn share homework 1, data type", function() {
     var exist = typeof typeOfParam;
 
     // empty function
