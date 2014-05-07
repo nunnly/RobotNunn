@@ -9,7 +9,12 @@
  * @return  {string} 如果变量名存在，返回true，不存在，返回false
  *
  */
-
+//var a=123;
 function valExists(valName) {
-
+	try{
+		return !!eval(valName)// && eval(valName) == undefined;
+	}catch(e){
+		console.log(e);
+	}
 }
+//valExists("a");
