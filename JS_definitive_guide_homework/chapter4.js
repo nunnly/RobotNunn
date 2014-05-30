@@ -6,9 +6,16 @@
  */
 
 function StateManager() {
+
 }
 
+StateManager.prototype.setState = function(key, state){
+    this[key] = state;
+}
 
+StateManager.prototype.getState = function(key){
+    return this[key];
+}
 
 /**
  * 闭包中只是为了介绍StateManager实例所必须拥有的方法，该部分实际运行时可全部注释掉
