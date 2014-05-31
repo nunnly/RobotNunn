@@ -5,16 +5,28 @@
  * 必须使用二进制机制实现
  */
 
-function StateManager() {
+function StateManager(key, state) {
+    if(this.constructor != arguments.callee){
+        return false;
+    }
+}
+StateManager.prototype.setState = function(key, state){
+    this[key] = state;
 }
 
-
-
+StateManager.prototype.getState = function(key){
+    return this[key];
+}
+StateManager.prototype.multiStatesMatcher = function(keys, state) {
+    var that = this;
+    if(Object.prototype.toString.call(arguments[0]) == "[object Array]"){
+        
+    };
+}
 /**
  * 闭包中只是为了介绍StateManager实例所必须拥有的方法，该部分实际运行时可全部注释掉
  */
 !function() {
-
     // StateManager实例应该提供的方法
 
     /**
@@ -35,9 +47,8 @@ function StateManager() {
      * @return {boolean} state
      */
     function getState(key) {
+
     }
-
-
     /**
      * 多状态匹配器
      * @param {array<string>} keys 多个状态key, 如["a", "b", "c"]
@@ -47,6 +58,5 @@ function StateManager() {
      */
     function multiStatesMatcher(keys, state) {
     }
-
 
 }();
