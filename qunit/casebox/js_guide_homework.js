@@ -43,7 +43,7 @@ test("js definitive guide chapter 4", function() {
 
     equal(manager.multiStatesMatcher(['d', 'e'], false), true, 'multiStatesMatcher test 3');
 
-    equal(manager.getState('undef', false, 'undefined state get should return false'));
+    equal(manager.getState('undef'), false, 'undefined state get should return false');
 
     var manager2 = new StateManager();
     equal(manager2.getState('a'), false, 'manager1 should not affect on manager2 test 1');
