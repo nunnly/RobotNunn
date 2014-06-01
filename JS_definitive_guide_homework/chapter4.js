@@ -5,9 +5,10 @@
  * 必须使用二进制机制实现
  */
 
+
 function StateManager(key, state) {
     if(this.constructor != arguments.callee){
-        return false;
+        throw new Error("坑爹啊Bosn！")
     }
 }
 StateManager.prototype.setState = function(key, state){
@@ -15,14 +16,20 @@ StateManager.prototype.setState = function(key, state){
 }
 
 StateManager.prototype.getState = function(key){
-    return this[key];
+    if(this[key] == undefined){
+        return false;
+    }else{
+        return this[key];
+    }
 }
 StateManager.prototype.multiStatesMatcher = function(keys, state) {
     var that = this;
-    if(Object.prototype.toString.call(arguments[0]) == "[object Array]"){
-        
-    };
+    //console.log("state = " + state);
+    if(Object.prototype.toString.call(keys) == "[object Array]"){
+        return keys.every(function(x){console.log(that[x] + "=" + state);return that[x]==state;});
+    }
 }
+
 /**
  * 闭包中只是为了介绍StateManager实例所必须拥有的方法，该部分实际运行时可全部注释掉
  */

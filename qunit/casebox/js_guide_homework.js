@@ -35,7 +35,6 @@ test("js definitive guide chapter 4", function() {
     equal(manager.getState('b'), true, 'getState b');
     equal(manager.getState('c'), false, 'getState c');
     equal(manager.multiStatesMatcher(['a', 'b', 'c'], true), false, 'multiStatesMatcher test 1');
-
     manager.setState('c', true);
     equal(manager.multiStatesMatcher(['a', 'b', 'c'], true), true, 'multiStatesMatcher test 2');
 
