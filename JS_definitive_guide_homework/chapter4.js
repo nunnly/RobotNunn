@@ -24,9 +24,8 @@ StateManager.prototype.getState = function(key){
 }
 StateManager.prototype.multiStatesMatcher = function(keys, state) {
     var that = this;
-    //console.log("state = " + state);
     if(Object.prototype.toString.call(keys) == "[object Array]"){
-        return keys.every(function(x){console.log(that[x] + "=" + state);return that[x]==state;});
+        return keys.every(function(x){return that[x]&state;});
     }
 }
 

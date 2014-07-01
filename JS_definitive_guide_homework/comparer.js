@@ -3,7 +3,8 @@
  * var compareResult = new Comparer(obj1, obj2);
  */
 function Comparer() {
-
+	this.obj1 = arguments[0];
+	this.obj2 = arguments[1];
 }
 
 
@@ -18,7 +19,22 @@ function Comparer() {
  * {x : [{y:1}], {x : [{z:1}]} 结构不同
  */
 Comparer.prototype.sameStructure = function() {
+	var i,j=1;
+	for(i in this.obj1){
+		// console.log(i);
+		if(i in this.obj2){
+			if(Object.prototype.toString.call(this.obj1[i]) === Object.prototype.toString.call(this.obj2[i])){
+			}else{
+
+			};
+		}else{
+			return false;
+		}
+	}
+	return true;
 };
+var dd = {a:123,b:456},cc = {a:456,b:123};
+var aa = new Comparer(dd,cc);
 
 /**
  * 和sameStructure类似，只是同时要判断类型，例如：

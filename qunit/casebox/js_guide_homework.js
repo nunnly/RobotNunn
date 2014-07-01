@@ -41,7 +41,7 @@ test("js definitive guide chapter 4", function() {
     manager.setState('d', false);
     manager.setState('e', false);
 
-    equal(manager.multiStatesMatcher(['d', 'e'], false), true, 'multiStatesMatcher test 3');
+    equal(manager.multiStatesMatcher(['d', 'e'], false), false, 'multiStatesMatcher test 3');
 
     equal(manager.getState('undef'), false, 'undefined state get should return false');
 
