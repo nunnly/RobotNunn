@@ -20,10 +20,19 @@ function Comparer() {
  */
 Comparer.prototype.sameStructure = function() {
 	var i,j=1;
+	//便利所有属性在obj1中
 	for(i in this.obj1){
-		// console.log(i);
+		//判断obj1的属性是否在obj2中
 		if(i in this.obj2){
+			//判断类型是否相同
 			if(Object.prototype.toString.call(this.obj1[i]) === Object.prototype.toString.call(this.obj2[i])){
+				if(Object.prototype.toString.call(this.obj1[i]) == "[object Array]" && this.obj1[i].length == 0 || this.obj2[i].length == 0){
+					continue;
+				}else{
+					
+				}
+			}else if(this.obj1[i] == this.obj2[i]){
+				continue;
 			}else{
 
 			};
