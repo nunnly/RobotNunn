@@ -19,23 +19,23 @@ function Comparer() {
  * {x : [{y:1}], {x : [{z:1}]} 结构不同
  */
 Comparer.prototype.sameStructure = function() {
-	var i,j=1;
+	var i,j;
 	//便利所有属性在obj1中
 	for(i in this.obj1){
 		//判断obj1的属性是否在obj2中
 		if(i in this.obj2){
 			//判断类型是否相同
 			if(Object.prototype.toString.call(this.obj1[i]) === Object.prototype.toString.call(this.obj2[i])){
-				if(Object.prototype.toString.call(this.obj1[i]) == "[object Array]" && this.obj1[i].length == 0 || this.obj2[i].length == 0){
+				if(Object.prototype.toString.call(this.obj1[i]) === "[object Array]" && this.obj1[i].length == 0 || this.obj2[i].length == 0){
 					continue;
-				}else{
-					
+				}else if(Object.prototype.toString.call(this.obj1[i]) === "[object Array]" && Object.prototype.toString.call(this.obj2[i]) === "[object Array]"){
+					for(j in this.obj1[i]){
+						if(!this.obj2[i][j]) return false;
+					}
 				}
 			}else if(this.obj1[i] == this.obj2[i]){
 				continue;
-			}else{
-
-			};
+			}
 		}else{
 			return false;
 		}
@@ -50,4 +50,5 @@ var aa = new Comparer(dd,cc);
  * {x : 1}, {x : true} 结构不同
  */
 Comparer.prototype.sameStructureAndDataType = function() {
+	//这么多循环嵌套把我自己都看晕了。。。。下面这个可以把上面第36行去掉就好了。。。
 };
